@@ -10,15 +10,32 @@
         </nav>
         <a class="logo">Gamor</a>
         <div class="second-menu">
-            <router-link to="/signin">Sign in</router-link>
+            <div v-if="userEmail">
+                <button @click.prevent="signOut">SignOut</button>
+            </div>
+            <router-link to="/sign-in">Sign in</router-link>
             <button class="alternate">Create Account</button>
         </div>
     </header>
 </template>
 
 <script>
+import { useStore } from "vuex"
+import { computed } from "vue"
+
 export default {
   name: 'Navbar',
+  setup() {
+    const store = useStore()
+    const userEmail = computed(() => store.state.user)
+    const signOut = () => {
+      store.dispatch("signOutAction")
+    };
+    return {
+      signOut,
+      userEmail,
+    };
+  },
 }
 </script>
 

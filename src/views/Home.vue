@@ -14,7 +14,7 @@
           <button>
             Create Account
           </button>
-          <router-link to="/signin" class="signin">Sign in</router-link>
+          <router-link to="/sign-in" class="signin">Sign in</router-link>
         </div>
       </div>
       <div class="card game">
@@ -32,6 +32,7 @@ import SearchGame from '@/components/SearchGame.vue'
 import Navbar from '@/components/Navbar.vue'
 import Game from '@/components/Game.vue'
 
+
 export default {
   name: 'Home',
   components: {
@@ -39,7 +40,7 @@ export default {
     Navbar,
     Game
   }
-}
+};
 </script>
 
 <style scoped>
