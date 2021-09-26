@@ -27,6 +27,20 @@ export default createStore({
         alert(error.error_description || error.message);
       }
     },
+    
+    async signUpAction({dispatch}, form) {
+      try {
+        const { error} = await supabase.auth.signUp({
+          email: form.email,
+          password: form.password,
+        });
+        if (error) throw error;
+        alert("You've been registered successfully");
+        await dispatch("signInAction", form)
+      } catch (error) {
+        alert(error.error_description || error.message);
+      }
+    },
 
     async signOutAction({ commit }) {
       try {
