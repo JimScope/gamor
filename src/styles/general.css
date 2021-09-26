@@ -1,0 +1,398 @@
+:root {
+    --border-radius: 10px;
+    --box-shadow: 0px 20px 18px 0px;
+    --color: #1c2028;
+    --color-menu: #66676A;
+    --color-accent: #118bee15;
+    --color-bg: #f1f2f5;
+    --color-bg-secondary: #7937DB;
+    --color-border: #e9e9e9;
+    --color-secondary: #7a38dc;
+    --color-secondary-accent: #920de90b;
+    --color-shadow: rgb(0 0 0 / 6%);
+    --color-text: #000;
+    --color-text-secondary: #999;
+    --hover-brightness: 1.2;
+    --justify-important: center;
+    --justify-normal: left;
+    --line-height: 1.3;
+    --color-bg-card: white;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color: #0097fc;
+        --color-accent: #0097fc4f;
+        --color-bg: #333;
+        --color-border: #555;
+        --color-secondary: #e20de9;
+        --color-secondary-accent: #e20de94f;
+        --color-shadow: #bbbbbb20;
+        --color-text: #f7f7f7;
+        --color-text-secondary: #aaa;
+    }
+}
+
+body {
+    height: 100%;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    line-height: var(--line-height);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+hr {
+    background-color: var(--color-border);
+    border: none;
+    height: 1px;
+    margin: 4rem 0;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: var(--justify-important);
+}
+
+[hidden] {
+    display: none;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: var(--line-height);
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 0.83em;
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.67em;
+    font-weight: bold;
+}
+
+ol li,
+ul li {
+    padding: 0.2rem 0;
+}
+
+p {
+    margin: 0.75rem 0;
+    padding: 0;
+}
+
+small {
+    color: var(--color-text-secondary);
+}
+
+/* Links */
+a {
+    color: var(--color-menu);
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    filter: brightness(var(--hover-brightness));
+}
+
+button {
+    border-radius: var(--border-radius);
+    display: inline-block;
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+    line-height: var(--line-height);
+    background-color: var(--color);
+    border: 2px solid var(--color);
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    color: var(--color-bg);
+    margin: 0.5rem 0;
+    padding: 1rem 2rem;
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(var(--hover-brightness));
+}
+
+/* Images */
+img {
+    max-width: 100%;
+}
+
+/* Forms */
+
+button:disabled,
+input:disabled {
+    background: var(--color-border);
+    border-color: var(--color-border);
+    color: var(--color-text-secondary);
+    cursor: not-allowed;
+}
+
+button[disabled]:hover {
+    filter: none;
+}
+
+form header {
+    margin: 1.5rem 0;
+    padding: 1.5rem 0;
+}
+
+input,
+label,
+select,
+textarea {
+    display: inline-block;
+    font-size: inherit;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    vertical-align: baseline;
+    margin: 0;
+}
+
+input[type="checkbox"]+label,
+input[type="radio"]+label {
+    display: inline-block;
+    font-weight: normal;
+    position: relative;
+    top: 1px;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    padding: 0.6rem 0.8rem;
+}
+
+input[readonly],
+textarea[readonly] {
+    background-color: var(--color-border);
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.rounded {
+    border-radius: 30px;
+}
+
+/* Card */
+.card {
+    background-color: var(--color-bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    text-align: var(--justify-normal);
+}
+
+.card-group > .card {
+    margin-bottom: 0.75rem;
+  }
+  @media (min-width: 576px) {
+    .card-group {
+      display: flex;
+      flex-flow: row wrap;
+    }
+    .card-group > .card {
+      flex: 1 0 0%;
+      margin-bottom: 0;
+    }
+    .card-group > .card + .card {
+      margin-left: 0;
+      border-left: 0;
+    }
+    .card-group > .card:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .card-group > .card:not(:last-child) .card-img-top,
+  .card-group > .card:not(:last-child) .card-header {
+      border-top-right-radius: 0;
+    }
+    .card-group > .card:not(:last-child) .card-img-bottom,
+  .card-group > .card:not(:last-child) .card-footer {
+      border-bottom-right-radius: 0;
+    }
+    .card-group > .card:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .card-group > .card:not(:first-child) .card-img-top,
+  .card-group > .card:not(:first-child) .card-header {
+      border-top-left-radius: 0;
+    }
+    .card-group > .card:not(:first-child) .card-img-bottom,
+  .card-group > .card:not(:first-child) .card-footer {
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  /* end Card */
+
+/* Intento de grid en flexbox */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-right: calc(1.5rem * -.5);
+    margin-left: calc(1.5rem * -.5);
+  }
+  
+  .row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(1.5rem * .5);
+    padding-left: calc(1.5rem * .5);
+    margin-top: 0;
+  }
+  
+  .row-cols-auto > * {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  
+  .row-cols-1 > * {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  
+  .row-cols-2 > * {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  
+  .row-cols-3 > * {
+    flex: 0 0 auto;
+    width: 33.333333%;
+  }
+  
+  .row-cols-4 > * {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  
+  .row-cols-5 > * {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+  
+  .row-cols-6 > * {
+    flex: 0 0 auto;
+    width: 16.666667%;
+  }
+  
+  .col-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  
+  
+  /* 12 Columns like Bulma and Bootstrap */
+  .col {
+    flex: 1 0 0%;
+  }
+  
+  .col-1 {
+    flex: 0 0 auto;
+    width: 8.333333%;
+  }
+  
+  .col-2 {
+    flex: 0 0 auto;
+    width: 16.666667%;
+  }
+  
+  .col-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  
+  .col-4 {
+    flex: 0 0 auto;
+    width: 33.333333%;
+  }
+  
+  .col-5 {
+    flex: 0 0 auto;
+    width: 41.666667%;
+  }
+  
+  .col-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  
+  .col-7 {
+    flex: 0 0 auto;
+    width: 58.333333%;
+  }
+  
+  .col-8 {
+    flex: 0 0 auto;
+    width: 66.666667%;
+  }
+  
+  .col-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  
+  .col-10 {
+    flex: 0 0 auto;
+    width: 83.333333%;
+  }
+  
+  .col-11 {
+    flex: 0 0 auto;
+    width: 91.666667%;
+  }
+  
+  .col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
