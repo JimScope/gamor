@@ -26,9 +26,8 @@
     </div>
 </template>
 
-<script setup>
+<script>
 // @ is an alias to /src
-import { onBeforeUnmount } from 'vue'
 import SearchGame from '@/components/SearchGame.vue'
 import Navbar from '@/components/Navbar.vue'
 import Game from '@/components/Game.vue'
@@ -41,18 +40,6 @@ export default {
     Game
   }
 }
-
-const router = useRouter()
-const authListener = firebase.auth().onAuthStateChanged(function(user) {
-    if (!user) { // not logged in
-        alert('You must be logged in to view this. redirecting to the login page')
-        router.push('/signin')
-    }
-})
-onBeforeUnmount(() => {
-    // clear up listener
-    authListener()
-})
 </script>
 
 <style scoped>
