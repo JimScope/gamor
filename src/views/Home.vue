@@ -8,7 +8,6 @@
             streaming
           </span>
           <br>games<br>differently
-          <img src="../assets/semicirculo.svg">
         </h1>
         <p>gamor now has <b>stream party</b> platform</p>
         <div style="display: flex; align-items: center; justify-content: space-around;">
@@ -56,6 +55,11 @@ button {
     padding-bottom: 0;
     color: white;
     background-color: var(--color-secondary);
+}
+
+.signin {
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .signup {

@@ -45,6 +45,11 @@ body {
     overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 hr {
     background-color: var(--color-border);
     border: none;
@@ -122,6 +127,7 @@ a {
     color: var(--color-menu);
     display: inline-block;
     font-weight: bold;
+    text-align: center;
     text-decoration: none;
 }
 

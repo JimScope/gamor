@@ -1,6 +1,6 @@
 <template>
-    <h3 class="title">{{ game }} New Season</h3>
-    <h6>Join Live Stream</h6>
+   <h3 class="title">{{ player.game }} New Season</h3>
+   <h6>Fortnite Join Live Stream</h6>
    <span class="glass">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
         <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
@@ -10,18 +10,44 @@
    <button>
     <h3>11 : 45</h3>
    </button>
-   <img src="../assets/fortnite.png">
+   <div class="players left">
+     <img src="../assets/logo.png">
+   </div>
+   <div class="players rigth">
+     <img src="../assets/logo.png">
+   </div>
+   <div v-if="player === null">
+     <img class="img-game" :src="gameImg">
+   </div>
+   <div v-else>
+     <img class="img-game" :src="player.image">
+   </div>
 </template>
 
 <script>
+import { ref, computed } from "vue"
+import { useStore } from "vuex"
 export default {
   name: 'Game',
+  setup() {
+      const store = useStore();
+      const player = computed(() => store.state.player)
+      const gameImg = ref('/img/fortnite.65d27e10.png')
+     return {
+        player,
+        gameImg
+      }
+  }
 }
 </script>
 
 <style scoped>
 .signin {
     padding: 0 20px;       
+}
+
+.card {
+    position: relative;
 }
 
 button {
@@ -58,5 +84,37 @@ button {
 
 .title {
     margin: 0.6rem 0;
+    text-align: center;
+}
+
+.players {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+    background: rgba(0,0,0,0.10);
+    border-radius: var(--border-radius)
+}
+
+.left{
+    align-self: start;
+    top: 2rem;
+}
+
+.rigth{
+    align-self: end;
+}
+
+.players img {
+    position: absolute;
+    height: 45px;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.img-game {
+    max-height: 40vh;
 }
 </style>

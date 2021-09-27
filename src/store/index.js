@@ -6,11 +6,15 @@ import { supabase } from "../supabase"
 export default createStore({
   state: {
     user: null,
+    player: {"id": null,"game":"Fortnite","image":"/img/fortnite.65d27e10.png","team": ''},
   },
   mutations: {
     setUser(state, payload) {
       state.user = payload;
     },
+    setPlayer(state, payload) {
+        state.player = payload;
+    }
   },
   actions: {
     async signInAction({ commit }, form) {
@@ -52,6 +56,9 @@ export default createStore({
       } catch (error) {
         alert(error.error_description || error.message);
       }
+    },
+    storeGamePlayer({ commit }, player) {
+       commit('setPlayer', player)
     },
   },
   modules: {

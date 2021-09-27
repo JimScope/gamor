@@ -2,15 +2,14 @@
     <h2>01.</h2><b>Choose</b> Platform
     <h2>02.</h2><b>Searching</b> Game
     <div class="card">
-        <div class="card_header">
-            <input type="search" v-model.trim.lazy="search" class="input-game" placeholder="Search games...">
-        </div>
+        <input type="search" v-model.trim.lazy="search" class="input-game" placeholder="Search games...">
         <hr>
         <div id="scrollList" class="container off-bottom">
           <div class="scrollbox">
             <ul class="list">
-              <li class="item" v-for="(user, index) in searchFunction.slice(0,11)" :key="user">
-                <span>{{ index }}</span> {{ user.team }}
+              <li class="item" v-for="(player, index) in searchFunction.slice(0,11)" :key="player.id">
+                <span>{{ index }}</span> {{ player.team }}
+                <button class="add-button" @click="addPlayer(player)">+</button>
               </li>
             </ul>
           </div>
@@ -22,6 +21,7 @@
 
 <script>
 import { ref, computed } from "vue"
+import { useStore } from "vuex";
 import games from '../../party_streams.json'
 
 export default {
@@ -29,16 +29,25 @@ export default {
   setup() {
     const user = ref(games)
     const search = ref("")
+    const player = ref("")
+    const store = useStore();
 
     const searchFunction = computed(() => {
         return user.value.filter((item) => {
             return item.game.toLowerCase().includes(search.value.toLowerCase());
         })
-      })
-      return {
-        search, searchFunction, user
-      }
-    }
+    })
+   const addPlayer = (player) => {
+      console.log(player)
+      store.dispatch("storeGamePlayer", player);
+   }
+   return {
+        search,
+        searchFunction,
+        user,
+        addPlayer,
+        player
+   }}
 }
 </script>
 
@@ -62,6 +71,10 @@ export default {
         margin: 0 1.2rem 1.2rem;
     }
     
+    .button-search:hover {
+        filter: brightness(var(--hover-brightness));
+    }
+    
     .card {
         padding: 0;
     }
@@ -72,7 +85,8 @@ export default {
     }
 
     .item {
-        padding: 0.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
 
     #scrollList {
@@ -101,6 +115,24 @@ export default {
 
     #scrollList.off-bottom .shadow-bottom {
       box-shadow: 0 -1em 1em -1em var(--color-shadow) inset;
+    }
+    
+    .add-button {
+        position: absolute;
+        right: 0;
+        border-radius: calc(var(--border-radius) - 5px);
+        width: 20px;
+        height: 20px;
+        line-height: 0;
+        background: var(--color-bg);
+        border-color: var(--color-bg);
+        color: var(--color-text);
+        padding: 0;
+        margin: 0;
+    }
+    
+    .add-button:hover {
+        filter: brightness(var(--hover-brightness));
     }
 
     /* end Scroll List */
