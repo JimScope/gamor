@@ -1,20 +1,52 @@
 [
     {
-        "game": "COD Warzone",
-        "streamers": {
-            "1": "Dr Team",
-            "2": "Mia Plays",
-            "3": "Keoxer",
-            "4": "Nickmerc"
-        }
+        "id": 1,
+        "game": "Call Of Duty Warzone",
+        "team": "Dr Team"
     },
     {
+        "id": 2,
         "game": "Fortnite",
-        "streamers": {
-            "1": "Dr Team",
-            "2": "Mia Plays",
-            "3": "Keoxer",
-            "4": "Nickmerc"
-        }
+        "team": "Mia Plays"
+    },
+        {
+        "id": 3,
+        "game": "Call Of Duty Warzone",
+        "team": "Dr Team"
+    },
+    {
+        "id": 4,
+        "game": "Fortnite",
+        "team": "Beta Players"
+    },
+        {
+        "id": 5,
+        "game": "Call Of Duty Warzone",
+        "team": "Legions"
+    },
+    {
+        "id": 6,
+        "game": "Fortnite",
+        "team": "Cubans"
+    },
+        {
+        "id": 7,
+        "game": "Call Of Duty Warzone",
+        "team": "Money Team"
+    },
+    {
+        "id": 8,
+        "game": "Fortnite",
+        "team": "Jim Plays"
+    },
+        {
+        "id": 9,
+        "game": "Call Of Duty Warzone",
+        "team": "Winers"
+    },
+    {
+        "id": 10,
+        "game": "Fortnite",
+        "team": "Lions"
     }
 ]

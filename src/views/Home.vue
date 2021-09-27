@@ -1,7 +1,7 @@
 <template>
     <Navbar />
     <div class="card-group">
-      <div class="card" style="justify-content: center; padding: 3rem">
+      <div class="card" style="justify-content: center; padding: 3rem; background-color: #F9F9FC;">
         <h1 style="font-size: 3rem;">
           start<br>
           <span style="color: #d97338;">
@@ -11,16 +11,14 @@
         </h1>
         <p>gamor now has <b>stream party</b> platform</p>
         <div style="display: flex; align-items: center; justify-content: space-around;">
-          <button>
-            Create Account
-          </button>
+          <router-link to="/sign-up" class="signup">Create Account</router-link>
           <router-link to="/sign-in" class="signin">Sign in</router-link>
         </div>
       </div>
       <div class="card game">
         <Game />
       </div>
-      <div class="card">
+      <div class="card" style="justify-content: center; padding: 3rem; background-color: #F9F9FC;">
         <SearchGame />
       </div>
     </div>
@@ -57,5 +55,14 @@ button {
     padding-bottom: 0;
     color: white;
     background-color: var(--color-secondary);
+}
+
+.signup {
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    color: var(--color);
+    margin: 0.5rem 0;
+    padding: 1rem 2rem;
 }
 </style>

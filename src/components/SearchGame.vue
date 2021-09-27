@@ -1,38 +1,60 @@
 <template>
-  <input type="text" v-model="searchGame" placeholder="Search games...">
-    <div id="example3" class="container off-bottom">
-      <div class="scrollbox">
-        <ul class="list" v-for="item in items" :key="item.id">
-          <li class="item">
-            {{ item.name }}-<img v-bind:src="'../img/' + item.img" v-bind:alt="item.name">
-          </li>
-        </ul>
-      </div>
-      <div class="shadow shadow-top" aria-hidden="true"></div>
-      <div class="shadow shadow-bottom" aria-hidden="true"></div>
+    <h2>01.</h2><b>Choose</b> Platform
+    <h2>02.</h2><b>Searching</b> Game
+    <div class="card">
+      <input type="search" v-model.trim.lazy="search" class="input-game" placeholder="Search games...">
+        <div id="example3" class="container off-bottom">
+          <div class="scrollbox">
+            <ul class="list">
+              <li class="item" v-for="(user, index) in searchFunction.slice(0,5)" :key="user">
+                {{ index }} {{ user.team }}
+              </li>
+            </ul>
+          </div>
+          <div class="shadow shadow-top" aria-hidden="true"></div>
+          <div class="shadow shadow-bottom" aria-hidden="true"></div>
+        </div>
+       <button class="button-search">Search Now</button>
     </div>
 </template>
 
 <script>
-import data from '../../party_streams.json'
+import { ref, computed } from "vue"
+import games from '../../party_streams.json'
+
 export default {
   name: 'SearchGame',
-  data() {
-    return {
-        buscar: ''
+  setup() {
+    const user = ref(games)
+    const search = ref("")
+
+    const searchFunction = computed(() => {
+        return user.value.filter((item) => {
+            return item.game.toLowerCase().includes(search.value.toLowerCase());
+        })
+      })
+      return {
+        search, searchFunction, user
+      }
     }
-  },
-  computed: {
-    items() {
-        return data.filter(item => {
-            return item.game.toLowerCase().includes(this.buscar.toLowerCase());
-        });
-    },
-  }
 }
 </script>
 
 <style>
+    h2 {
+        color: var(--color-menu)
+    }
+
+    .input-game,
+    .input-game:focus-visible {
+        border: none;
+        outline: none;
+    }
+    
+    .button-search {
+        margin-bottom: 0;
+    }
+
     /* Scroll List */
     .container {
       background-color:white;

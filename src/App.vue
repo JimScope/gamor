@@ -8,6 +8,7 @@
   -moz-osx-font-smoothing: grayscale;
   max-width: 1200px;
   margin: auto;
+  padding: 1rem;
   font-family: 'Rubik', sans-serif;
 }
 </style>

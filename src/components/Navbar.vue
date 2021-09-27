@@ -11,10 +11,12 @@
         <a class="logo">Gamor</a>
         <div class="second-menu">
             <div v-if="userEmail">
-                <button @click.prevent="signOut">SignOut</button>
+                <a @click.prevent="signOut" class="logout">Logout</a>
             </div>
-            <router-link to="/sign-in">Sign in</router-link>
-            <button class="alternate">Create Account</button>
+            <div v-else>
+                <router-link to="/sign-in" class="signin">Sign in</router-link>
+                <router-link to="/sign-up" class="signup">Create Account</router-link>
+            </div>
         </div>
     </header>
 </template>
@@ -64,13 +66,25 @@ li:first-child {
 }
 
 a,
-button,
 router-link {
     transition: all 0.3s ease 0s;
 }
 
-button {
+.signup {
     border-radius: 30px;
+    background-color: var(--color);
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    color: var(--color-bg);
+    margin: 0.5rem 0;
+    padding: 1rem 2rem;
+}
+
+.signin {
+    padding-right: 20px;
+}
+
+.logout {
+    margin-left: 10rem;
 }
 
 .logo {
@@ -86,9 +100,7 @@ button {
     align-items: center;
 }
 
-.second-menu a {
-    padding: 0 20px;
-}
+
 
 .router-link-active {
     color: var(--color);

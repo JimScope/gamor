@@ -144,7 +144,7 @@ button {
     padding: 1rem 2rem;
 }
 
-button:hover {
+.button:hover {
     cursor: pointer;
     filter: brightness(var(--hover-brightness));
 }
