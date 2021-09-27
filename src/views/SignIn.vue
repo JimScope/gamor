@@ -4,7 +4,6 @@
             <header>
                 <h2>Sign in</h2>
             </header>
-            {{ user }}
             <label for="email">Email</label>
             <input type="email" id="email" name="email" v-model="form.email" placeholder="user@example.com">
             <label for="pass">Password</label>

@@ -8,7 +8,10 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      requiresAuth: true,
+    }
   },
   {
     path: '/sign-in',
@@ -17,7 +20,7 @@ const routes = [
   },
   {
     path: '/sign-up',
-    name: 'SignUp',
+    name: 'Sign Up',
     component: SignUp
   },
   {
@@ -27,9 +30,6 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-    meta: {
-      requiresAuth: true,
-    }
   }
 ]
 
@@ -39,9 +39,8 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  // get current user info
   const currentUser = supabase.auth.user();
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if(requiresAuth && !currentUser) next('sign-in');
   else if(!requiresAuth && currentUser) next("/");
