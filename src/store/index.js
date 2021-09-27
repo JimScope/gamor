@@ -6,7 +6,7 @@ import { supabase } from "../supabase"
 export default createStore({
   state: {
     user: null,
-    player: {"id": null,"game":"Fortnite","image":"/img/fortnite.65d27e10.png","team": ''},
+    player: {"id": null,"game":"Fortnite","image":"/fortnite.png","team": ''},
   },
   mutations: {
     setUser(state, payload) {

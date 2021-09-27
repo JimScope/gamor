@@ -16,26 +16,21 @@
    <div class="players rigth">
      <img src="../assets/logo.png">
    </div>
-   <div v-if="player === null">
-     <img class="img-game" :src="gameImg">
-   </div>
-   <div v-else>
+   <div>
      <img class="img-game" :src="player.image">
    </div>
 </template>
 
 <script>
-import { ref, computed } from "vue"
+import { computed } from "vue"
 import { useStore } from "vuex"
 export default {
   name: 'Game',
   setup() {
       const store = useStore();
       const player = computed(() => store.state.player)
-      const gameImg = ref('/img/fortnite.65d27e10.png')
      return {
-        player,
-        gameImg
+        player
       }
   }
 }

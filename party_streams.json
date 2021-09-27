@@ -2,61 +2,61 @@
     {
         "id": 1,
         "game": "Call Of Duty Warzone",
-        "image": "/img/call-of-duty.45721ff0.png",
+        "image": "/call-of-duty.png",
         "team": "Dr Team"
     },
     {
         "id": 2,
         "game": "Fortnite",
-        "image": "/img/fortnite.65d27e10.png",
+        "image": "/fortnite.png",
         "team": "Mia Plays"
     },
         {
         "id": 3,
         "game": "Call Of Duty Warzone",
-        "image": "/img/call-of-duty.45721ff0.png",
+        "image": "/call-of-duty.png",
         "team": "Dr Team"
     },
     {
         "id": 4,
         "game": "Fortnite",
-        "image": "/img/fortnite.65d27e10.png",
+        "image": "/fortnite.png",
         "team": "Beta Players"
     },
         {
         "id": 5,
         "game": "Call Of Duty Warzone",
-        "image": "/img/call-of-duty.45721ff0.png",
+        "image": "/call-of-duty.png",
         "team": "Legions"
     },
     {
         "id": 6,
         "game": "Fortnite",
-        "image": "/img/fortnite.65d27e10.png",
+        "image": "/fortnite.png",
         "team": "Cubans"
     },
         {
         "id": 7,
         "game": "Call Of Duty Warzone",
-        "image": "/img/call-of-duty.45721ff0.png",
+        "image": "/call-of-duty.png",
         "team": "Money Team"
     },
     {
         "id": 8,
         "game": "Fortnite",
-        "image": "/img/fortnite.65d27e10.png",
+        "image": "/fortnite.png",
         "team": "Jim Plays"
     },
         {
         "id": 9,
         "game": "Call Of Duty Warzone",
-        "image": "/img/call-of-duty.45721ff0.png",
+        "image": "/call-of-duty.png",
         "team": "Winers"
     },
     {
         "id": 10,
         "game": "Fortnite",
-        "image": "/img/fortnite.65d27e10.png",
+        "image": "/fortnite.png",
         "team": "Lions"
     }
 ]
