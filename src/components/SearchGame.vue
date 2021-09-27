@@ -2,16 +2,18 @@
     <h2>01.</h2><b>Choose</b> Platform
     <h2>02.</h2><b>Searching</b> Game
     <div class="card">
-      <input type="search" v-model.trim.lazy="search" class="input-game" placeholder="Search games...">
-        <div id="example3" class="container off-bottom">
+        <div class="card_header">
+            <input type="search" v-model.trim.lazy="search" class="input-game" placeholder="Search games...">
+        </div>
+        <hr>
+        <div id="scrollList" class="container off-bottom">
           <div class="scrollbox">
             <ul class="list">
-              <li class="item" v-for="(user, index) in searchFunction.slice(0,5)" :key="user">
-                {{ index }} {{ user.team }}
+              <li class="item" v-for="(user, index) in searchFunction.slice(0,11)" :key="user">
+                <span>{{ index }}</span> {{ user.team }}
               </li>
             </ul>
           </div>
-          <div class="shadow shadow-top" aria-hidden="true"></div>
           <div class="shadow shadow-bottom" aria-hidden="true"></div>
         </div>
        <button class="button-search">Search Now</button>
@@ -40,9 +42,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     h2 {
         color: var(--color-menu)
+    }
+
+    .input-game {
+        padding: 1.2rem 1.2rem 0 1.2rem;
+        font-weight: bold;
     }
 
     .input-game,
@@ -52,47 +59,37 @@ export default {
     }
     
     .button-search {
-        margin-bottom: 0;
+        margin: 0 1.2rem 1.2rem;
+    }
+    
+    .card {
+        padding: 0;
     }
 
     /* Scroll List */
-    .container {
-      background-color:white;
-      border:solid .5em black;
-      border-radius:.5em;
-      box-sizing:border-box;
-      flex:0 0 30%;
-      height:240px;
-      margin:.5em;
-      overflow:auto;
-    }
-
-    .explanation {
-      flex: 1 0 60%;
-      margin-left:1em;
-    }
-
     .list {
-      list-style:none;
-      margin:0;
-      padding:0;
+      list-style: none;
     }
 
     .item {
-      background-color:lightgray;
-      margin:.25em;
-      padding:.5em;
+        padding: 0.5rem;
     }
 
-    #example3 {
+    #scrollList {
       overflow: hidden;
       position: relative;
+      margin: 0 1.5rem 1.5rem 1.5rem;
+      border-radius: var(--border-radius);
     }
-    #example3 .scrollbox {
-      height: 100%;
+
+    #scrollList .scrollbox {
+      height: 200px;
+      padding-top: 1.2rem;
       overflow: auto;
+      scrollbar-width: none;
     }
-    #example3 .shadow {
+
+    #scrollList .shadow {
       bottom: 0;
       left: 0;
       pointer-events: none;
@@ -101,11 +98,9 @@ export default {
       top: 0;
       transition: all 0.2s ease-out;
     }
-    #example3.off-top .shadow-top {
-      box-shadow: 0 1em 1em -1em black inset;
-    }
-    #example3.off-bottom .shadow-bottom {
-      box-shadow: 0 -1em 1em -1em black inset;
+
+    #scrollList.off-bottom .shadow-bottom {
+      box-shadow: 0 -1em 1em -1em var(--color-shadow) inset;
     }
 
     /* end Scroll List */

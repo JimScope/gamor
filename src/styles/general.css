@@ -49,7 +49,7 @@ hr {
     background-color: var(--color-border);
     border: none;
     height: 1px;
-    margin: 4rem 0;
+    margin: 1px 0;
 }
 
 section {
@@ -229,6 +229,10 @@ label {
     text-align: var(--justify-normal);
 }
 
+.card-header {
+    border-bottom: 1px
+}
+
 .card-group > .card {
     margin-bottom: 0.75rem;
   }
@@ -272,127 +276,3 @@ label {
   }
 
   /* end Card */
-
-/* Intento de grid en flexbox */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 0;
-    margin-right: calc(1.5rem * -.5);
-    margin-left: calc(1.5rem * -.5);
-  }
-  
-  .row > * {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-    padding-right: calc(1.5rem * .5);
-    padding-left: calc(1.5rem * .5);
-    margin-top: 0;
-  }
-  
-  .row-cols-auto > * {
-    flex: 0 0 auto;
-    width: auto;
-  }
-  
-  .row-cols-1 > * {
-    flex: 0 0 auto;
-    width: 100%;
-  }
-  
-  .row-cols-2 > * {
-    flex: 0 0 auto;
-    width: 50%;
-  }
-  
-  .row-cols-3 > * {
-    flex: 0 0 auto;
-    width: 33.333333%;
-  }
-  
-  .row-cols-4 > * {
-    flex: 0 0 auto;
-    width: 25%;
-  }
-  
-  .row-cols-5 > * {
-    flex: 0 0 auto;
-    width: 20%;
-  }
-  
-  .row-cols-6 > * {
-    flex: 0 0 auto;
-    width: 16.666667%;
-  }
-  
-  .col-auto {
-    flex: 0 0 auto;
-    width: auto;
-  }
-  
-  
-  /* 12 Columns like Bulma and Bootstrap */
-  .col {
-    flex: 1 0 0%;
-  }
-  
-  .col-1 {
-    flex: 0 0 auto;
-    width: 8.333333%;
-  }
-  
-  .col-2 {
-    flex: 0 0 auto;
-    width: 16.666667%;
-  }
-  
-  .col-3 {
-    flex: 0 0 auto;
-    width: 25%;
-  }
-  
-  .col-4 {
-    flex: 0 0 auto;
-    width: 33.333333%;
-  }
-  
-  .col-5 {
-    flex: 0 0 auto;
-    width: 41.666667%;
-  }
-  
-  .col-6 {
-    flex: 0 0 auto;
-    width: 50%;
-  }
-  
-  .col-7 {
-    flex: 0 0 auto;
-    width: 58.333333%;
-  }
-  
-  .col-8 {
-    flex: 0 0 auto;
-    width: 66.666667%;
-  }
-  
-  .col-9 {
-    flex: 0 0 auto;
-    width: 75%;
-  }
-  
-  .col-10 {
-    flex: 0 0 auto;
-    width: 83.333333%;
-  }
-  
-  .col-11 {
-    flex: 0 0 auto;
-    width: 91.666667%;
-  }
-  
-  .col-12 {
-    flex: 0 0 auto;
-    width: 100%;
-  }

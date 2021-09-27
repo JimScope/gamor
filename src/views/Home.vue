@@ -8,6 +8,7 @@
             streaming
           </span>
           <br>games<br>differently
+          <img src="../assets/semicirculo.svg">
         </h1>
         <p>gamor now has <b>stream party</b> platform</p>
         <div style="display: flex; align-items: center; justify-content: space-around;">
