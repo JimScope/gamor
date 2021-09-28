@@ -1,6 +1,13 @@
 <template>
-    <h2>01.</h2><b>Choose</b> Platform
-    <h2>02.</h2><b>Searching</b> Game
+    <div class="text-title">
+        <h2>01.</h2><b>Choose</b> Platform
+    </div>
+    <div class="game-tabs">
+        <span class="active">🎉 Party</span><span>Matchs</span><span>Streams</span>
+    </div>
+    <div class="text-title">
+        <h2>02.</h2><b>Searching</b> Game
+    </div>
     <div class="card">
         <input type="search" v-model.trim.lazy="search" class="input-game" placeholder="Search games...">
         <hr>
@@ -52,8 +59,34 @@ export default {
 </script>
 
 <style scoped>
-    h2 {
-        color: var(--color-menu)
+    .text-title > h2 {
+        color: var(--color-menu);
+    }
+    
+    .text-title > b {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+    
+    .game-tabs {
+        background-color: var(--color-bg-card);
+        border-radius: 30px;
+        padding: 0.3rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+    }
+    
+    .game-tabs > span {
+        width: 33.3333333333%;
+        padding: 0.7rem;
+        text-align: center;
+        border-radius: 30px;
+    }
+    
+    .active {
+         background-color: var(--color-bg);
     }
 
     .input-game {
@@ -77,6 +110,12 @@ export default {
     
     .card {
         padding: 0;
+    }
+   
+    .text-title {
+        display: inline-flex;
+        align-items: baseline;
+        margin-bottom: 1rem
     }
 
     /* Scroll List */
