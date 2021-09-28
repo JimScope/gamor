@@ -122,4 +122,19 @@ export default {
     .slash {
         vertical-align: super;
     }
+    
+    /* Medium devices (landscape tablets, 768px and down) */
+    @media only screen and (max-width: 768px) {
+        .categories {
+            margin-top: 2rem; 
+        }
+
+        .cards {
+            flex-direction: column
+        }
+        
+        .cards  > .card {
+            width: 100%;
+        }
+    } 
 </style>

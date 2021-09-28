@@ -86,4 +86,11 @@ button {
     margin: 0.5rem 0;
     padding: 1rem 2rem;
 }
+
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px) {
+    .categories {
+        margin-top: 3rem; 
+    }
+}
 </style>
