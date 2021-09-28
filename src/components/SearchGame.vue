@@ -69,6 +69,7 @@ export default {
     }
     
     .game-tabs {
+        height: 3.2rem;
         background-color: var(--color-bg-card);
         border-radius: 30px;
         padding: 0.3rem;

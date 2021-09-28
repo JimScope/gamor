@@ -82,7 +82,7 @@ button {
 }
 
 .players {
-    position: relative;
+    position: absolute;
     height: 60px;
     width: 60px;
     padding: 5px;
@@ -92,12 +92,12 @@ button {
 
 .left{
     align-self: start;
-    top: 2rem;
+    top: 16rem;
 }
 
 .rigth{
     align-self: end;
-    top: 3rem
+    top: 20rem
 }
 
 .players img {

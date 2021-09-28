@@ -1,5 +1,5 @@
 <template>
-    <section class="section-fluid">
+    <section class="fluid">
         <form class="card" @submit.prevent="signUp">
             <header>
                 <h2>Sign Up</h2>
@@ -39,8 +39,5 @@ export default {
 </script>
 
 <style scoped>
-    .section-fluid {
-        height: 100vh;
-        align-content: center;
-    }
+
 </style>
