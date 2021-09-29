@@ -92,7 +92,7 @@ export default {
 
     .input-game {
         padding: 1.2rem 1.2rem 0 1.2rem;
-        font-weight: bold;
+        font-weight: medium;
     }
 
     .input-game,

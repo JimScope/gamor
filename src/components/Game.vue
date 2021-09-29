@@ -50,7 +50,7 @@ button {
     background-color:  white;
     border-color: white;
     padding: 0.4rem 0.7rem;
-    font-weight: bold;
+    font-weight: medium;
     color: var(--color-secondary);
     font-stretch: expanded;
 }

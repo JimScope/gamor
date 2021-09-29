@@ -1,0 +1,116 @@
+<template>
+    <header>
+        <nav>
+            <ul>
+                <li><router-link to="/">Home</router-link></li>
+                <li><a href="#">Streams</a></li>
+                <li><a href="#">Party</a></li>
+                <li><a href="#">Premium</a></li>
+            </ul>
+            <a class="logo">Gamor</a>
+            <div class="second-menu">
+                <div v-if="userEmail">
+                    <a @click.prevent="signOut" class="logout">Logout</a>
+                </div>
+                <div v-else>
+                    <router-link to="/sign-in" class="signin">Sign in</router-link>
+                    <router-link to="/sign-up" class="signup">Create Account</router-link>
+                </div>
+            </div>
+        </nav>
+    </header>
+</template>
+
+<script>
+import { useStore } from "vuex"
+import { computed } from "vue"
+
+export default {
+  setup() {
+    const store = useStore();
+
+    const userEmail = computed(() => store.state.user);
+
+     const signOut = () => {
+      store.dispatch("signOutAction");
+    };
+    return {
+      signOut,
+      userEmail,
+    };
+  },
+};
+</script>
+
+<style scoped>
+/* Nav */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+li:first-child {
+    padding-left: 0;
+}
+
+a,
+router-link {
+    transition: all 0.3s ease 0s;
+}
+
+.signup {
+    border-radius: 30px;
+    background-color: var(--color);
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    color: var(--color-bg);
+    margin: 0.5rem 0;
+    padding: 1rem 2rem;
+}
+
+.signin {
+    padding-right: 20px;
+}
+
+.logout {
+    margin-left: 10rem;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--color);
+    transform: translateX(-50%)
+}
+
+.second-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.router-link-active {
+    color: var(--color);
+    font-weight: bold
+}
+
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px) {
+    ul,
+    {
+        flex-direction: column;
+    }
+}
+
+</style>

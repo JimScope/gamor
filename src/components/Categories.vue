@@ -86,7 +86,7 @@ export default {
     h2 {
         margin-top: 1rem;
         margin-bottom: 1rem;
-        font-weight: bolder;
+        font-weight: medium;
     }
     
     h3 {

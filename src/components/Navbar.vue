@@ -1,41 +1,52 @@
 <template>
-    <header>
-        <nav>
-            <ul>
-                <li><router-link to="/">Home</router-link></li>
-                <li><a href="#">Streams</a></li>
-                <li><a href="#">Party</a></li>
-                <li><a href="#">Premium</a></li>
-            </ul>
-        </nav>
+    <nav :class="{ full: !closed }">
+        <a id="logo-sm">Gamor</a>
+        <a class="toggle" @click="toggleMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+        </a>
+        <ul class="left-menu" :class="{ dFlex: !closed }">
+            <li><router-link to="/">Home</router-link></li>
+            <li><a href="#">Streams</a></li>
+            <li><a href="#">Party</a></li>
+            <li><a href="#">Premium</a></li>
+        </ul>
         <a class="logo">Gamor</a>
-        <div class="second-menu">
-            <div v-if="userEmail">
-                <a @click.prevent="signOut" class="logout">Logout</a>
-            </div>
-            <div v-else>
-                <router-link to="/sign-in" class="signin">Sign in</router-link>
-                <router-link to="/sign-up" class="signup">Create Account</router-link>
-            </div>
-        </div>
-    </header>
+        <ul class="right-menu" v-if="userEmail" :class="{ dFlex: !closed }">
+            <li><a @click.prevent="signOut" class="logout">Logout</a></li>
+        </ul>
+        <ul v-else class="right-menu" :class="{ dFlex: !closed }">
+            <li><router-link to="/sign-in" class="signin">Sign in</router-link></li>
+            <li><router-link to="/sign-up" class="signup">Create Account</router-link></li>
+        </ul>
+    </nav>
 </template>
 
 <script>
 import { useStore } from "vuex"
-import { computed } from "vue"
+import { ref, computed } from "vue"
 
 export default {
   setup() {
     const store = useStore();
-
     const userEmail = computed(() => store.state.user);
+    const closed = ref(true)
 
-     const signOut = () => {
+    const signOut = () => {
       store.dispatch("signOutAction");
+    };
+    const toggleMenu = () => {
+      if (closed.value == true) {
+        closed.value = false
+      } else {
+        closed.value = true
+      }
     };
     return {
       signOut,
+      toggleMenu,
+      closed,
       userEmail,
     };
   },
@@ -44,25 +55,38 @@ export default {
 
 <style scoped>
 /* Nav */
-header {
+nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 30px 0;
+    margin: 3rem 0;
 }
 
 ul {
     list-style: none;
+    display: flex;
     padding: 0;
+    width: 33.3333333333%;
 }
 
-ul li {
-    display: inline-block;
-    padding: 0 20px;
+.right-menu {
+    justify-content: end;
+    align-items: center;
 }
 
-li:first-child {
-    padding-left: 0;
+.left-menu > li {
+    margin-right: 35px;
+}
+
+.left-menu > li:last-child {
+    margin-right: 0
+}
+
+.right-menu > li {
+   margin-left: 35px;
+}
+
+.right-menu > li:first-child {
+    margin-left: 0
 }
 
 a,
@@ -70,41 +94,88 @@ router-link {
     transition: all 0.3s ease 0s;
 }
 
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--color);
+    width: 33.3333333333%;
+}
+
 .signup {
     border-radius: 30px;
     background-color: var(--color);
     box-shadow: var(--box-shadow) var(--color-shadow);
     color: var(--color-bg);
-    margin: 0.5rem 0;
     padding: 1rem 2rem;
 }
-
-.signin {
-    padding-right: 20px;
-}
-
-.logout {
-    margin-left: 10rem;
-}
-
-.logo {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: var(--color);
-    transform: translateX(-50%)
-}
-
-.second-menu {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 
 
 .router-link-active {
     color: var(--color);
     font-weight: bold
+}
+
+#logo-sm,
+.toggle {
+    display: none
+}
+
+
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1.20rem;
+        margin-bottom: 1.20rem;
+        transition: all .8s ease;
+    }
+    
+    ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        display: none;
+    }
+    
+    .left-menu {
+        margin: auto;
+    }
+    
+    .right-menu {
+        margin: auto;
+    }
+    
+    .left-menu > li {
+        margin: 1rem 0;
+        font-size: 1.5rem;
+    }
+    
+    .right-menu > li {
+        margin: 1rem 0;
+    }
+    
+    .logo {
+        display: none;
+    }
+    
+    .toggle {
+        align-self: flex-end;
+        display: initial;
+        position: absolute;
+        cursor: pointer;
+    }
+    
+    #logo-sm {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--color);
+    }
+    
+    .dFlex {
+        display: flex
+    }
 }
 
 </style>

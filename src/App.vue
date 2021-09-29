@@ -10,7 +10,8 @@
   height: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 1rem;
-  font-family: 'Rubik', sans-serif;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: 'Roboto', sans-serif;
 }
 </style>
