@@ -70,9 +70,10 @@ export default {
     
     .game-tabs {
         height: 3.2rem;
-        background-color: var(--color-bg-card);
+        background-color: var(--color-bg-secondary);
         border-radius: 30px;
-        padding: 0.3rem;
+        border: 2px var(--color-border);
+        padding: 0.4rem;
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
@@ -81,18 +82,17 @@ export default {
     
     .game-tabs > span {
         width: 33.3333333333%;
-        padding: 0.7rem;
+        padding: 0.6rem;
         text-align: center;
         border-radius: 30px;
     }
     
     .active {
-         background-color: var(--color-bg);
+         background-color: var( --color-bg-active);
     }
 
     .input-game {
         padding: 1.2rem 1.2rem 0 1.2rem;
-        font-weight: medium;
     }
 
     .input-game,
@@ -111,6 +111,7 @@ export default {
     
     .card {
         padding: 0;
+        border: 2px var(--color-border);
     }
    
     .text-title {
@@ -164,9 +165,9 @@ export default {
         width: 20px;
         height: 20px;
         line-height: 0;
-        background: var(--color-bg);
-        border-color: var(--color-bg);
-        color: var(--color-text);
+        background: var(--color-bg-active);
+        border-color: var(--color-bg-active);
+        color: var(--color);
         padding: 0;
         margin: 0;
     }

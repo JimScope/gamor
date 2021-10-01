@@ -86,7 +86,6 @@ export default {
     h2 {
         margin-top: 1rem;
         margin-bottom: 1rem;
-        font-weight: medium;
     }
     
     h3 {
@@ -100,6 +99,7 @@ export default {
     .cards {
         display: flex;
         flex-wrap: wrap;
+
     }
     
     .cards > .card {
@@ -108,6 +108,7 @@ export default {
         width: 25%;
         margin-right: 0.7rem;
         margin-bottom: 0.7rem;
+        background-color: var(--color-bg-card);
     }
 
     div.card:nth-child(4),

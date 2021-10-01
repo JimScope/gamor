@@ -2,10 +2,10 @@
     <section class="full">
         <Navbar />
         <div class="card-group">
-          <div class="card" style="justify-content: center; padding: 2rem; background-color: #F9F9FC;">
+          <div class="card">
             <h1 style="font-size: 3rem;">
               start<br>
-              <span style="color: #d97338;">
+              <span class="accent">
                 streaming
               </span>
               <br>games<br>differently
@@ -19,7 +19,7 @@
           <div class="card game">
             <Game />
           </div>
-          <div class="card" style="justify-content: center; padding: 2rem; background-color: #F9F9FC;">
+          <div class="card">
             <SearchGame />
           </div>
         </div>
@@ -53,24 +53,23 @@ export default {
     min-height: 100vh;
 }
 
+.card {
+  justify-content: center;
+  background-color: var(--color-bg-card);
+  padding: 2rem;
+}
+
 .categories {
     margin-bottom: 2rem;
 }
 
-button {
-    border-radius: 30px;
-    background-color:  white;
-    border-color: white;
-    color: var(--color)
-}
-
 .game {
     position: relative;
+    justify-content: space-between;
     align-items: center;
-    justify-content: end;
     padding-bottom: 0;
     color: white;
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent-secondary);
 }
 
 .signin {
@@ -80,11 +79,15 @@ button {
 
 .signup {
     border-radius: 30px;
-    background-color: white;
+    background-color: var(--color-bg-active-secondary);
     box-shadow: var(--box-shadow) var(--color-shadow);
     color: var(--color);
     margin: 0.5rem 0;
     padding: 1rem 2rem;
+}
+
+.accent {
+  color: var(--color-accent);
 }
 
 /* Medium devices (landscape tablets, 768px and down) */

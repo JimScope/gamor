@@ -101,17 +101,22 @@ router-link {
     width: 33.3333333333%;
 }
 
+.signin {
+    color: var(--color)
+}
+
 .signup {
     border-radius: 30px;
-    background-color: var(--color);
+    background-color: var(--color-bg-nav-btn);
     box-shadow: var(--box-shadow) var(--color-shadow);
-    color: var(--color-bg);
+    border: 2px var(--color-border);
+    color: var(--color-nav-btn);
     padding: 1rem 2rem;
 }
 
 
 .router-link-active {
-    color: var(--color);
+    color: var(--color-accent-secondary);
     font-weight: bold
 }
 

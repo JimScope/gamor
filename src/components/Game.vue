@@ -1,15 +1,17 @@
 <template>
-   <h3 class="title">{{ player.game }} New Season</h3>
+   <h2 class="title">{{ player.game }} New Season</h2>
    <h6>Join Live Stream</h6>
-   <span class="glass">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
-        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-    </svg>
-   </span>
-   <button>
-    <h3>11 : 45</h3>
-   </button>
+   <div style="position: relative">
+    <div class="glass">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+        </svg>
+    </div>
+    <button>
+        <h3>11 : 45</h3>
+    </button>
+   </div>
    <div class="players left">
      <img src="../assets/logo.png">
    </div>
@@ -49,8 +51,7 @@ button {
     border-radius: 30px;
     background-color:  white;
     border-color: white;
-    padding: 0.4rem 0.7rem;
-    font-weight: medium;
+    padding: 0.7rem;
     color: var(--color-secondary);
     font-stretch: expanded;
 }
@@ -61,7 +62,7 @@ button {
     height: 3rem;
     position: relative;
     top: 40px;
-    left: -70px;
+    left: -30px;
     background: rgba( 255, 255, 255, 0.10 );
     backdrop-filter: blur( 4px );
     -moz-backdrop-filter: blur( 4px );

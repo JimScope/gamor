@@ -41,5 +41,7 @@ export default {
 </script>
 
 <style scoped>
-
+.card {
+  background-color: var(--color-bg-card)
+}
 </style>
