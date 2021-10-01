@@ -3,7 +3,7 @@
         <Navbar />
         <div class="card-group">
           <div class="card">
-            <h1 style="font-size: 3rem;">
+            <h1 class="title">
               start<br>
               <span class="accent">
                 streaming
@@ -11,7 +11,7 @@
               <br>games<br>differently
             </h1>
             <p>gamor now has <b>stream party</b> platform</p>
-            <div style="display: flex; align-items: center; justify-content: space-around;">
+            <div id="button">
               <router-link to="/sign-up" class="signup">Create Account</router-link>
               <router-link to="/sign-in" class="signin">Sign in</router-link>
             </div>
@@ -56,7 +56,13 @@ export default {
 .card {
   justify-content: center;
   background-color: var(--color-bg-card);
-  padding: 2rem;
+  padding: 3rem 2.5rem;
+}
+
+#button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .categories {
@@ -70,6 +76,11 @@ export default {
     padding-bottom: 0;
     color: white;
     background-color: var(--color-accent-secondary);
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bolder;
 }
 
 .signin {

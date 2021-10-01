@@ -8,7 +8,7 @@
             <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
         </svg>
     </div>
-    <button>
+    <button class="timer">
         <h3>11 : 45</h3>
     </button>
    </div>
@@ -80,6 +80,11 @@ button {
 .title {
     margin: 0.6rem 0;
     text-align: center;
+    font-weight: bolder;
+}
+
+.timer {
+    font-weight: bolder;
 }
 
 .players {
